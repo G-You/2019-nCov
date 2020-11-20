@@ -1,11 +1,6 @@
 # string reconnector workflow
 name: reconnector
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the main branch
-on:
-  workflow_dispatch
-
 inputs:
   string:
     description: 'New string'
@@ -19,6 +14,11 @@ inputs:
     description: "Filename"
     required: true
     default: "dummy.txt"
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  workflow_dispatch
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
