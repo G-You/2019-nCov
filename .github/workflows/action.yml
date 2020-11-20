@@ -1,6 +1,20 @@
 # string reconnector workflow
 name: reconnector
 
+inputs:
+  string:
+    description: 'New string'
+    required: true
+    default: 'N/A'
+  connector:
+    description: 'Connector'
+    required: true
+    default: '+'
+  filename:
+    description: "Filename"
+    required: true
+    default: "dummy.txt"
+
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
 on:
@@ -15,20 +29,6 @@ jobs:
     #container: rocker/verse
     container: python:3.8
     # Steps represent a sequence of tasks that will be executed as part of the job
-    inputs:
-      string:
-        description: 'New string'
-        required: true
-        default: 'N/A'
-      connector:
-        description: 'Connector'
-        required: true
-        default: '+'
-      filename:
-        description: "Filename"
-        required: true
-        default: "dummy.txt"
-
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
