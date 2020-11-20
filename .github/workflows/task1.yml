@@ -19,10 +19,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - run: |
-          chmod +x dummy.py
           git config --local user.email "rafael.flachar@gmail.com"
           git config --local user.name "G-You"
-          ./dummy.py
+          python3 dummy.py
       - run: |-
           git add dummy.txt
           git commit -m 'appended strings'
