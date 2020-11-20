@@ -5,7 +5,7 @@ name: reconnector
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
 on:
-  workflow_dispatch
+  workflow_dispatch:
   inputs:
     string:
       description: 'New string'
