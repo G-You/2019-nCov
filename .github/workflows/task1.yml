@@ -6,6 +6,20 @@ name: reconnector
 on:
   workflow_dispatch
 
+inputs:
+  string:
+    description: 'New string'
+    required: true
+    default: 'N/A'
+  connector:
+    description: 'Connector'
+    required: true
+    default: '+'
+  filename:
+    description: "Filename"
+    required: true
+    default: "dummy.txt"
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -21,7 +35,7 @@ jobs:
       - run: |
           git config --local user.email "rafael.flachar@gmail.com"
           git config --local user.name "G-You"
-          python3 dummy.py
+          python3 dummy.py -s {inputs.string} -c {inputs.connector} -f {inputs.filename}
       - run: |-
           git add dummy.txt
           git commit -m 'appended strings'
