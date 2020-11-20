@@ -6,19 +6,19 @@ name: reconnector
 # events but only for the main branch
 on:
   workflow_dispatch:
-  inputs:
-    string:
-      description: 'New string'
-      required: true
-      default: 'N/A'
-    connector:
-      description: 'Connector'
-      required: true
-      default: '+'
-    filename:
-      description: "Filename"
-      required: true
-      default: "dummy.txt"
+    inputs:
+      string:
+        description: 'New string'
+        required: true
+        default: 'N/A'
+      connector:
+        description: 'Connector'
+        required: true
+        default: '+'
+      filename:
+        description: "Filename"
+        required: true
+        default: "dummy.txt"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
