@@ -35,7 +35,8 @@ jobs:
       - run: |
           git config --local user.email "rafael.flachar@gmail.com"
           git config --local user.name "G-You"
-          python3 dummy.py -s ${{github.event.inputs.string}} -c ${{github.event.inputs.connector}} -f ${{github.event.inputs.filename}}
+          echo ${{github.event.inputs.string}}
+          python3 dummy.py -s "I don't" -c "*" -f "dummy.txt"
       - run: |-
           git add dummy.txt
           git commit -m 'appended strings'
