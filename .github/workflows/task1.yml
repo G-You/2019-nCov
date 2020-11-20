@@ -1,0 +1,29 @@
+# string reconnector workflow
+name: reconnector
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  workflow_dispatch
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  oecd:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    #container: rocker/verse
+    container: python:3.8
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - run: |
+          chmod +x dummy.py
+          git config --local user.email "rafael.flachar@gmail.com"
+          git config --local user.name "G-You"
+          ./dummy.py
+      - run: |-
+          git add dummy.txt
+          git commit -m 'appended strings'
+          git push 
