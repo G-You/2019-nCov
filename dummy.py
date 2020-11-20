@@ -1,4 +1,5 @@
 import string
+import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-f", "--filename", type=str,
